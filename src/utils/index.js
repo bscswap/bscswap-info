@@ -295,6 +295,9 @@ export const toNiceDateYear = date => dayjs.utc(dayjs.unix(date)).format('MMMM D
 
 export const isAddress = value => {
   try {
+
+    if (value == '0xf388ee045cab30321db3fb69eab7dfb0c20f10ec')
+      return value
     return ethers.utils.getAddress(value.toLowerCase())
   } catch {
     return false
